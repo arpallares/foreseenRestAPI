@@ -7,7 +7,11 @@
  */
 
 // Apply the java-library plugin to add support for Java Library
-apply plugin: 'java-library'
+apply plugin: 'java'
+apply plugin: 'war'
+
+group = 'com.foreseenrestapi'
+description = 'UserManagement'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -26,6 +30,8 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
-    compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.17.Final'
+    //compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.17.Final'
+    providedCompile 'org.jboss.resteasy:resteasy-jaxrs:3.0.17.Final'
+    providedCompile 'org.jboss.resteasy:resteasy-multipart-provider:3.0.17.Final'
 }
 
