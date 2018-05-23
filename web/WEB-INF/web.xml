@@ -5,7 +5,8 @@
    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id = "WebApp_ID" version = "3.0">
 
-    <display-name>User Management</display-name>
+    <display-name>UserManagement</display-name>
+    <description>User Management</description>
     <context-param>
         <param-name>resteasy.scan</param-name>
         <param-value>true</param-value>
