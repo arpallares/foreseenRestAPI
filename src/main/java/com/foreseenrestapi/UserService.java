@@ -9,11 +9,19 @@ import javax.ws.rs.core.MediaType;
 @Path("/UserService")
 
 public class UserService {
-    UserDao userDao = new UserDao();
+
+    //metodo default
+    @GET
+    public void defaultm(){
+    }
+
+    //metodo para traer usuarios
     @GET
     @Path("/users")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<User> getUsers(){
+        UserDao userDao = new UserDao();
         return userDao.getAllUsers();
     }
+
 }
