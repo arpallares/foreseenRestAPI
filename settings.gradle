@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'Foreseen rest API'
+rootProject.name = 'UserManagement'
