@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.springjpa" />
+    <context:component-scan base-package="com.foreseenrestapi" />
+    <jpa:repositories base-package="com.foreseenrestapi" />
+    <tx:annotation-driven />
+    <tx:jta-transaction-manager />
+
+    <jee:jndi-lookup id="dataSource" jndi-name="java:/PostgresDS"/>
+    <jee:jndi-lookup jndi-name="java:comp/env/persistence/foreseen-emf"
+                     id="entityManagerFactory" expected-type="javax.persistence.EntityManagerFactory" />
+
+    <!--<bean id="dataSourceBean2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="org.postgresql.Driver"></property>-->
+        <!--<property name="url" value="jdbc:postgresql://localhost:5432/local"></property>-->
+        <!--<property name="username" value="local"></property>-->
+        <!--<property name="password" value="local"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="hbAdapterBean" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">-->
+        <!--<property name="databasePlatform" value="org.hibernate.dialect.PostgresPlusDialect"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="emfBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+        <!--<property name="dataSource" ref="dataSource"></property>-->
+        <!--<property name="packagesToScan" value="com.springjpa"></property>-->
+        <!--<property name="jpaVendorAdapter" ref="hbAdapterBean"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="jpaTxnManagerBean" class="org.springframework.orm.jpa.JpaTransactionManager">-->
+        <!--<property name="entityManagerFactory" ref="emfBean"></property>-->
+    <!--</bean>-->
+
+</beans>
