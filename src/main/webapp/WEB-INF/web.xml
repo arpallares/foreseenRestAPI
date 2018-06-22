@@ -5,8 +5,8 @@
    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id = "WebApp_ID" version = "3.0">
 
-    <display-name>UserManagement</display-name>
-    <description>User Management</description>
+    <display-name>ForeseenAPI</display-name>
+    <description>Foreseen API REST</description>
     <context-param>
         <param-name>resteasy.scan</param-name>
         <param-value>true</param-value>
@@ -25,7 +25,6 @@
         <filter-name>CORS</filter-name>
         <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
         <async-supported>true</async-supported>
-
         <init-param>
             <param-name>cors.allowGenericHttpRequests</param-name>
             <param-value>true</param-value>
@@ -66,13 +65,15 @@
 
     <servlet-mapping>
         <servlet-name>Resteasy</servlet-name>
-        <url-pattern>/UserService/*</url-pattern>
-        <url-pattern>/accounts/*</url-pattern>
-        <url-pattern>/account/*</url-pattern>
+        <url-pattern>/ForeseenAPI/*</url-pattern>
+        <url-pattern>/entities/*</url-pattern>
+        <url-pattern>/catalogs/*</url-pattern>
+        <url-pattern>/business/*</url-pattern>
     </servlet-mapping>
 
     <persistence-unit-ref>
         <persistence-unit-ref-name>persistence/foreseen-emf</persistence-unit-ref-name>
-        <persistence-unit-name>ForAccountsDB</persistence-unit-name>
+        <persistence-unit-name>ForeseenDB</persistence-unit-name>
     </persistence-unit-ref>
+
 </web-app>

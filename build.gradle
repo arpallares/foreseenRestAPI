@@ -10,8 +10,8 @@
 apply plugin: 'java'
 apply plugin: 'war'
 
-group = 'com.foreseenrestapi'
-description = 'UserManagement'
+group = 'app.foreseenpoc'
+description = 'ForeseenAPI'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -26,18 +26,11 @@ dependencies {
     compile 'org.jboss.resteasy:resteasy-spring:3.0.17.Final'
     providedCompile 'org.jboss.resteasy:resteasy-multipart-provider:3.0.17.Final'
 
-    // https://mvnrepository.com/artifact/org.springframework/spring-core
-    //    compile group: 'org.springframework', name: 'spring-core', version: '5.0.6.RELEASE'
 
     compile 'org.springframework:spring-web:5.0.6.RELEASE'
     compile 'org.springframework:spring-context:5.0.6.RELEASE'
     compile 'org.springframework:spring-context-support:5.0.6.RELEASE'
 
-
-    // https://mvnrepository.com/artifact/org.springframework/org.springframework.transaction
-    //    compile group: 'org.springframework', name: 'org.springframework.transaction', version: '3.2.2.RELEASE'
-    // https://mvnrepository.com/artifact/org.springframework/org.springframework.orm
-    //    compile group: 'org.springframework', name: 'org.springframework.orm', version: '3.2.2.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework/spring-orm
     compile group: 'org.springframework', name: 'spring-orm', version: '5.0.6.RELEASE'
 
@@ -45,16 +38,9 @@ dependencies {
     providedCompile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.3.1.Final'
     providedCompile 'dom4j:dom4j:1.6.1'
 
-    // https://mvnrepository.com/artifact/org.postgresql/postgresql
-    //    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
-
-    // https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api
-    //    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
-
     // https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
     compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.0.7.RELEASE'
 
     // https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter
     compile group: 'com.thetransactioncompany', name: 'cors-filter', version: '2.6'
-
 }
